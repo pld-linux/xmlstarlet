@@ -10,8 +10,8 @@ Patch0:		%{name}-nostatic.patch
 URL:		http://xmlstar.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libxml2-devel
-BuildRequires:	libxslt-devel
+BuildRequires:	libxml2-devel >= 1:2.6.12
+BuildRequires:	libxslt-devel >= 1.1.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
