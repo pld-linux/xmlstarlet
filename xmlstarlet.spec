@@ -8,6 +8,8 @@ Source0:	http://xmlstar.sourceforge.net/downloads/%{name}-%{version}.tar.gz
 # Source0-md5:	8deb71834bcdfb4443c258a1f0042fce
 Patch0:		%{name}-nostatic.patch
 URL:		http://xmlstar.sourceforge.net/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
