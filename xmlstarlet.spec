@@ -1,18 +1,19 @@
 Summary:	Command Line XML Toolkit
 Summary(pl.UTF-8):	Zestaw obsługiwanych z linii poleceń narzędzi do XML-a
 Name:		xmlstarlet
-Version:	1.0.1
+Version:	1.2.1
 Release:	1
 License:	MIT
 Group:		Applications/Publishing/XML
-Source0:	http://xmlstar.sourceforge.net/downloads/%{name}-%{version}.tar.gz
-# Source0-md5:	8deb71834bcdfb4443c258a1f0042fce
-Patch0:		%{name}-nostatic.patch
+Source0:	http://downloads.sourceforge.net/xmlstar/%{name}-%{version}.tar.gz
+# Source0-md5:	575d2b0fc97450c97f4029817a8a787a
 URL:		http://xmlstar.sourceforge.net/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libxml2-devel >= 1:2.6.12
+BuildRequires:	autoconf >= 2.62
+BuildRequires:	automake >= 1:1.11
+BuildRequires:	libxml2-devel >= 1:2.6.23
 BuildRequires:	libxslt-devel >= 1.1.9
+Requires:	libxml2 >= 1:2.6.23
+Requires:	libxslt >= 1.1.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,14 +31,14 @@ przy użyciu poleceń uniksowych grep, sed, awk, diff, patch, join itp.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -46,6 +47,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+# rename to what is expected, keep "xml" name for compatibility
+ln $RPM_BUILD_ROOT%{_bindir}/xml $RPM_BUILD_ROOT%{_bindir}/xmlstarlet
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -53,4 +57,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README Copyright TODO doc/xmlstarlet.txt doc/xmlstarlet.pdf
 %attr(755,root,root) %{_bindir}/xml
+%attr(755,root,root) %{_bindir}/xmlstarlet
 %{_mandir}/man1/xmlstarlet.1*
