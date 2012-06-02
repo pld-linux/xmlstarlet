@@ -10,9 +10,9 @@ Source0:	http://downloads.sourceforge.net/xmlstar/%{name}-%{version}.tar.gz
 URL:		http://xmlstar.sourceforge.net/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11
-BuildRequires:	libxml2-devel >= 1:2.6.23
+BuildRequires:	libxml2-devel >= 1:2.6.27
 BuildRequires:	libxslt-devel >= 1.1.9
-Requires:	libxml2 >= 1:2.6.23
+Requires:	libxml2 >= 1:2.6.27
 Requires:	libxslt >= 1.1.9
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
