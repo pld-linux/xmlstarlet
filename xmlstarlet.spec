@@ -2,7 +2,7 @@ Summary:	Command Line XML Toolkit
 Summary(pl.UTF-8):	Zestaw obsługiwanych z linii poleceń narzędzi do XML-a
 Name:		xmlstarlet
 Version:	1.3.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Applications/Publishing/XML
 Source0:	http://downloads.sourceforge.net/xmlstar/%{name}-%{version}.tar.gz
