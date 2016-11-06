@@ -1,12 +1,12 @@
 Summary:	Command Line XML Toolkit
 Summary(pl.UTF-8):	Zestaw obsługiwanych z linii poleceń narzędzi do XML-a
 Name:		xmlstarlet
-Version:	1.3.1
-Release:	2
+Version:	1.6.1
+Release:	1
 License:	MIT
 Group:		Applications/Publishing/XML
 Source0:	http://downloads.sourceforge.net/xmlstar/%{name}-%{version}.tar.gz
-# Source0-md5:	5173ad3f01ec0ba0d54bd1fbfc057abf
+# Source0-md5:	f3c5dfa3b1a2ee06cd57c255cc8b70a0
 URL:		http://xmlstar.sourceforge.net/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11
@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README Copyright TODO doc/xmlstarlet.txt doc/xmlstarlet.pdf
+%doc AUTHORS ChangeLog NEWS README Copyright TODO doc/xmlstarlet.txt doc/xmlstarlet-ug.pdf
 %attr(755,root,root) %{_bindir}/xml
 %attr(755,root,root) %{_bindir}/xmlstarlet
 %{_mandir}/man1/xmlstarlet.1*
