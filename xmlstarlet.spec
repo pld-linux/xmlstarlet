@@ -7,6 +7,8 @@ License:	MIT
 Group:		Applications/Publishing/XML
 Source0:	http://downloads.sourceforge.net/xmlstar/%{name}-%{version}.tar.gz
 # Source0-md5:	f3c5dfa3b1a2ee06cd57c255cc8b70a0
+Patch0:		libxml2.14.patch
+Patch1:		types.patch
 URL:		http://xmlstar.sourceforge.net/
 BuildRequires:	autoconf >= 2.62
 BuildRequires:	automake >= 1:1.11
@@ -31,6 +33,8 @@ przy użyciu poleceń uniksowych grep, sed, awk, diff, patch, join itp.
 
 %prep
 %setup -q
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__aclocal} -I m4

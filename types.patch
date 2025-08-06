@@ -1,0 +1,20 @@
+--- xmlstarlet-1.6.1/src/xml_elem.c.orig	2012-08-12 17:18:59.000000000 +0200
++++ xmlstarlet-1.6.1/src/xml_elem.c	2025-08-06 18:15:54.018827446 +0200
+@@ -178,7 +178,7 @@
+ }
+ 
+ typedef struct {
+-    xmlChar **array;
++    const xmlChar **array;
+     int offset;
+ } ArrayDest;
+ 
+@@ -186,7 +186,7 @@
+  * put @name into @data->array[@data->offset]
+  */
+ static void
+-hash_key_put(void *payload, void *data, xmlChar *name)
++hash_key_put(void *payload, void *data, const xmlChar *name)
+ {
+     ArrayDest *dest = data;
+     dest->array[dest->offset++] = name;
